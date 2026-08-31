@@ -1,6 +1,8 @@
 package poo.exercises.desk_exercise.domain;
 
-import poo.exercises.desk_exercise.exception.InvallidDrawersException;
+import poo.exercises.desk_exercise.exception.InvalidDrawersException;
+import poo.exercises.desk_exercise.exception.InvalidNegativeDrawersException;
+import poo.exercises.desk_exercise.exception.InvalidWoodException;
 
 public class Desk {
 
@@ -12,9 +14,14 @@ public class Desk {
     public Desk(String wood, String color) {
         setColor(color);
         setWood(wood);
+        setHasDrawers(hasDrawers);
+        setDrawers(drawers);
     }
 
     public void setWood(String wood) {
+        if (wood.isEmpty() || wood.isBlank()){
+            throw new InvalidWoodException("Error: Invallid Wood.");
+        }
         this.wood = wood;
     }
 
@@ -28,8 +35,11 @@ public class Desk {
 
     public void setDrawers(int drawers) {
         if (hasDrawers){
+            if (drawers < 1 ){
+                throw new InvalidNegativeDrawersException("Error: Negative Drawers.");
+            }
             this.drawers = drawers;
         }
-        throw new InvallidDrawersException("Error: Invallid Drawers");
+        throw new InvalidDrawersException("Error: Invallid Drawers");
     }
 }
