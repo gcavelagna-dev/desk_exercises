@@ -20,14 +20,14 @@ public class Desk {
     }
 
     public void setWood(String wood) {
-        if (wood.isEmpty() || wood.isBlank()){
+        if (wood.isEmpty() || wood.isBlank()) {
             throw new InvalidWoodException("Error: Invalid Wood.");
         }
         this.wood = wood;
     }
 
     public void setColor(String color) {
-        if (color.isBlank() || color.isEmpty()){
+        if (color.isBlank() || color.isEmpty()) {
             throw new InvalidColorException("Error: Invalid Color");
         }
         this.color = color;
@@ -38,31 +38,33 @@ public class Desk {
     }
 
     public void setDrawers(int drawers) {
-        if (!hasDrawers){
+        if (!hasDrawers) {
             throw new InvalidDrawersException("Error: There are no Drawers.");
         }
-        if (hasDrawers){
+        if (hasDrawers) {
             drawers = 1;
-            System.out.println("Drawers successfully set to " + drawers);
+            System.out.println("Drawers successfully set to " + drawers + ".");
             this.drawers = drawers;
         }
-        if (drawers < 1 ){
+        if (drawers < 1) {
             throw new InvalidNegativeDrawersException("Error: Negative Drawers.");
         }
 
     }
 
-    public String getWood(){
+    public String getWood() {
         return wood;
     }
 
-    public String getColor(){
+    public String getColor() {
         return color;
     }
-    public int getDrawers(){
+
+    public int getDrawers() {
         return drawers;
     }
-    public boolean isHasDrawers(){
+
+    public boolean isHasDrawers() {
         return hasDrawers;
     }
 }
