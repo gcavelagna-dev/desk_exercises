@@ -2,6 +2,7 @@ package poo.exercises.desk_exercise.domain;
 
 import poo.exercises.desk_exercise.exception.InvalidColorException;
 import poo.exercises.desk_exercise.exception.InvalidDrawersException;
+import poo.exercises.desk_exercise.exception.InvalidNegativeDrawersException;
 import poo.exercises.desk_exercise.exception.InvalidWoodException;
 
 public class Desk {
@@ -11,7 +12,7 @@ public class Desk {
     private boolean hasDrawers;
     private int drawers;
 
-    public Desk(String wood, String color, boolean hasDrawers, int drawers) {
+    public Desk(String wood, String color, boolean hasDrawers) {
         setColor(color);
         setWood(wood);
         setHasDrawers(hasDrawers);
@@ -37,17 +38,17 @@ public class Desk {
     }
 
     public void setDrawers(int drawers) {
+        if (!hasDrawers){
+            throw new InvalidDrawersException("Error: There are no Drawers.");
+        }
         if (hasDrawers){
             if (drawers < 1 ){
-                throw new InvalidDrawersException("Error: Negative Drawers.");
+                throw new InvalidNegativeDrawersException("Error: Negative Drawers.");
             }
+            System.out.println("Drawers successfully set to " + drawers);
             this.drawers = drawers;
         }
-        //sei que aqui não deve fazer muito sentido, mas irei deixar.
-        if (hasDrawers) {
-            return;
-        }
-        return;
+
     }
 
     public String getWood(){
@@ -59,5 +60,8 @@ public class Desk {
     }
     public int getDrawers(){
         return drawers;
+    }
+    public boolean isHasDrawers(){
+        return hasDrawers;
     }
 }
