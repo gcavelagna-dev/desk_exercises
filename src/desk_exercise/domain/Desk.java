@@ -1,7 +1,7 @@
 package poo.exercises.desk_exercise.domain;
 
+import poo.exercises.desk_exercise.exception.InvalidColorException;
 import poo.exercises.desk_exercise.exception.InvalidDrawersException;
-import poo.exercises.desk_exercise.exception.InvalidNegativeDrawersException;
 import poo.exercises.desk_exercise.exception.InvalidWoodException;
 
 public class Desk {
@@ -11,7 +11,7 @@ public class Desk {
     private boolean hasDrawers;
     private int drawers;
 
-    public Desk(String wood, String color) {
+    public Desk(String wood, String color, boolean hasDrawers, int drawers) {
         setColor(color);
         setWood(wood);
         setHasDrawers(hasDrawers);
@@ -20,12 +20,15 @@ public class Desk {
 
     public void setWood(String wood) {
         if (wood.isEmpty() || wood.isBlank()){
-            throw new InvalidWoodException("Error: Invallid Wood.");
+            throw new InvalidWoodException("Error: Invalid Wood.");
         }
         this.wood = wood;
     }
 
     public void setColor(String color) {
+        if (color.isBlank() || color.isEmpty()){
+            throw new InvalidColorException("Error: Invalid Color");
+        }
         this.color = color;
     }
 
@@ -36,10 +39,25 @@ public class Desk {
     public void setDrawers(int drawers) {
         if (hasDrawers){
             if (drawers < 1 ){
-                throw new InvalidNegativeDrawersException("Error: Negative Drawers.");
+                throw new InvalidDrawersException("Error: Negative Drawers.");
             }
             this.drawers = drawers;
         }
-        throw new InvalidDrawersException("Error: Invallid Drawers");
+        //sei que aqui não deve fazer muito sentido, mas irei deixar.
+        if (hasDrawers) {
+            return;
+        }
+        return;
+    }
+
+    public String getWood(){
+        return wood;
+    }
+
+    public String getColor(){
+        return color;
+    }
+    public int getDrawers(){
+        return drawers;
     }
 }
