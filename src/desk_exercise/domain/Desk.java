@@ -42,11 +42,12 @@ public class Desk {
             throw new InvalidDrawersException("Error: There are no Drawers.");
         }
         if (hasDrawers){
-            if (drawers < 1 ){
-                throw new InvalidNegativeDrawersException("Error: Negative Drawers.");
-            }
+            drawers = 1;
             System.out.println("Drawers successfully set to " + drawers);
             this.drawers = drawers;
+        }
+        if (drawers < 1 ){
+            throw new InvalidNegativeDrawersException("Error: Negative Drawers.");
         }
 
     }
