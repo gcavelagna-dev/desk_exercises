@@ -19,7 +19,6 @@ public class Desk {
             drawers = 0;
             setDrawers(drawers);
         }
-
     }
 
     public void setWood(String wood) {

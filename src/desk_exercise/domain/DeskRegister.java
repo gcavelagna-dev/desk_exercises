@@ -6,7 +6,8 @@ import poo.exercises.desk_exercise.exception.InvallidDuplicateDeskException;
 import java.util.ArrayList;
 
 public class DeskRegister {
-    private ArrayList<Desk> tableRegistrations = new ArrayList<>();
+
+    private final ArrayList<Desk> tableRegistrations = new ArrayList<>();
 
     public void addDesk(Desk desk){
 
@@ -18,6 +19,13 @@ public class DeskRegister {
         }
 
         tableRegistrations.add(desk);
+    }
+
+    public void showTables(ArrayList<Desk> desks){
+        for (int i = 0; i < tableRegistrations.size(); i++) {
+            tableRegistrations.get(i);
+        }
+
     }
     public void removeDesk(Desk desk){
         tableRegistrations.remove(desk);
