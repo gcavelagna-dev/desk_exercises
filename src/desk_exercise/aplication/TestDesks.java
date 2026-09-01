@@ -54,7 +54,8 @@ public class TestDesks {
 
 
                 if (response.equalsIgnoreCase("Y")){
-                    drawers = input.nextInt();
+                    hasDrawer = true;
+//                    drawers = input.nextInt();
                     break;
                 } else if (response.equalsIgnoreCase("N")){
                     hasDrawer = false;
@@ -65,7 +66,7 @@ public class TestDesks {
                     continue;
                 }
             }
-//            Desk desk = new Desk(wood, color, hasDrawer);
+            Desk desk = new Desk(wood, color, hasDrawer);
 //            while (true){
 //
 //                if (hasDrawer){
