@@ -1,22 +1,25 @@
 package poo.exercises.desk_exercise.domain;
 
-import poo.exercises.desk_exercise.exception.InvalidColorException;
-import poo.exercises.desk_exercise.exception.InvalidDrawersException;
-import poo.exercises.desk_exercise.exception.InvalidNegativeDrawersException;
-import poo.exercises.desk_exercise.exception.InvalidWoodException;
+import poo.exercises.desk_exercise.exception.*;
 
 public class Desk {
 
     private String wood;
     private String color;
     private boolean hasDrawers;
-    private int drawers;
+    private int drawers = 1;
 
     public Desk(String wood, String color, boolean hasDrawers) {
         setColor(color);
         setWood(wood);
         setHasDrawers(hasDrawers);
-        setDrawers(drawers);
+        if (hasDrawers) {
+            setDrawers(drawers);
+        } else {
+            drawers = 0;
+            setDrawers(drawers);
+        }
+
     }
 
     public void setWood(String wood) {
@@ -38,18 +41,17 @@ public class Desk {
     }
 
     public void setDrawers(int drawers) {
-        if (!hasDrawers) {
-            throw new InvalidDrawersException("Error: There are no Drawers.");
-        }
-        if (hasDrawers) {
 
-            if (drawers < 1) {
+        if (hasDrawers) {
+            if (drawers < 0) {
                 throw new InvalidNegativeDrawersException("Error: Negative Drawers.");
-            }else {
-                drawers = 1;
-                System.out.println("Place the number of drawers on the table");
-                this.drawers = drawers;
             }
+            if (drawers > 12) {
+                throw new InvalidSeveralDrawersException("Error: Max Drawers Hit.");
+            }
+
+            System.out.println("Place the number of drawers on the table");
+            this.drawers = drawers;
         }
     }
 
