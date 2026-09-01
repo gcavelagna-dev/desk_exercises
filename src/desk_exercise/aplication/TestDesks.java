@@ -87,7 +87,7 @@ public class TestDesks {
 //                System.out.println("\nHow many drawers does it have?\n");
 //                drawers = input.nextInt();
 //            }
-            desks.add(desk);
+//            desks.add(desk);
 
         }
         Desk oak = new Desk("Oak", "Orange", true);
