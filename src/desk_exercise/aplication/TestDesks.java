@@ -10,7 +10,6 @@ public class TestDesks {
 
     public static void main(String[] args){
         Scanner input = new Scanner(System.in);
-
         int amount = 0;
         while (true){
             System.out.println("How many tables will you have");
