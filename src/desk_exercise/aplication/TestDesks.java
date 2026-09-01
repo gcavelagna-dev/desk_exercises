@@ -4,6 +4,7 @@ import poo.exercises.desk_exercise.domain.Desk;
 import poo.exercises.desk_exercise.domain.DeskRegister;
 
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class TestDesks {
@@ -29,6 +30,7 @@ public class TestDesks {
             }
         }
 
+        ArrayList<Desk> desks = new ArrayList<>();
         System.out.println("----------------------------");
 
         for (int i = 0; i < amount; i++) {
@@ -52,7 +54,7 @@ public class TestDesks {
 
 
                 if (response.equalsIgnoreCase("Y")){
-                    hasDrawer = true;
+                    drawers = input.nextInt();
                     break;
                 } else if (response.equalsIgnoreCase("N")){
                     hasDrawer = false;
@@ -63,28 +65,29 @@ public class TestDesks {
                     continue;
                 }
             }
-            while (true){
+//            Desk desk = new Desk(wood, color, hasDrawer);
+//            while (true){
+//
+//                if (hasDrawer){
+//                    System.out.println("\nHow many drawers does this desk have?\n");
+//                    try {
+//                        drawers = input.nextInt();
+//                        desk.setDrawers(drawers);
+//                        break;
+//                    } catch (Exception e) {
+//                        System.err.println("Unidentified Number.");
+//                        input.next();
+//                        continue;
+//                    }
+//
+//                }
+//            }
 
-                if (hasDrawer){
-                    System.out.println("\nHow many drawers does this desk have?");
-                    try {
-                        drawers = input.nextInt();
-                        break;
-                    } catch (Exception e) {
-                        System.err.println("Unidentified Number.");
-                        input.next();
-                        continue;
-                    }
-
-                }
-            }
-
-            new Desk wood (wood, color, hasDrawer);
-            if (hasDrawer){
-
-            }
-
-
+//            if (hasDrawer){
+//                System.out.println("\nHow many drawers does it have?\n");
+//                drawers = input.nextInt();
+//            }
+            desks.add(desk);
 
         }
         Desk oak = new Desk("Oak", "Orange", true);

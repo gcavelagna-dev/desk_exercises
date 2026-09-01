@@ -49,7 +49,7 @@ public class Desk {
                 throw new InvalidSeveralDrawersException("Error: Max Drawers Hit.");
             }
 
-            System.out.println("Place the number of drawers on the table");
+            System.out.println("Place the number of drawers on the table:");
             this.drawers = drawers;
         }
     }
