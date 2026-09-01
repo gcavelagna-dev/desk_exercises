@@ -30,17 +30,23 @@ public class TestDesks {
         }
         System.out.println("----------------------------");
         input.nextLine();
-        boolean hasDrawer;
         for (int i = 0; i < amount; i++) {
+
+            String wood;
+            String color;
+            String response;
+            boolean hasDrawer;
+            int drawers;
+
             System.out.println("\nWhat kind of wood is the table made of?");
-            String wood = input.nextLine();
+            wood = input.nextLine();
 
             System.out.println("\nWhat is the color?");
-            String color = input.nextLine();
+            color = input.nextLine();
 
             while (true){
                 System.out.println("\nDoes the desk have drawers?[Y/N]");
-                String response = input.next();
+                response = input.next();
 
 
                 if (response.equalsIgnoreCase("Y")){
@@ -57,7 +63,8 @@ public class TestDesks {
             }
 
             if (hasDrawer){
-                System.out.println("\n");
+                System.out.println("\nHow many drawers does this desk have?");
+
             }
 
         }
