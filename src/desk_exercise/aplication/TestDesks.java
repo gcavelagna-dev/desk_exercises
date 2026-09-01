@@ -28,8 +28,9 @@ public class TestDesks {
                 continue;
             }
         }
+
         System.out.println("----------------------------");
-        input.nextLine();
+
         for (int i = 0; i < amount; i++) {
 
             String wood;
@@ -39,6 +40,7 @@ public class TestDesks {
             int drawers;
 
             System.out.println("\nWhat kind of wood is the table made of?");
+            input.nextLine();
             wood = input.nextLine();
 
             System.out.println("\nWhat is the color?");
@@ -61,11 +63,28 @@ public class TestDesks {
                     continue;
                 }
             }
+            while (true){
 
+                if (hasDrawer){
+                    System.out.println("\nHow many drawers does this desk have?");
+                    try {
+                        drawers = input.nextInt();
+                        break;
+                    } catch (Exception e) {
+                        System.err.println("Unidentified Number.");
+                        input.next();
+                        continue;
+                    }
+
+                }
+            }
+
+            new Desk wood (wood, color, hasDrawer);
             if (hasDrawer){
-                System.out.println("\nHow many drawers does this desk have?");
 
             }
+
+
 
         }
         Desk oak = new Desk("Oak", "Orange", true);
