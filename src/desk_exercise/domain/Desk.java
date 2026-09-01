@@ -2,8 +2,6 @@ package poo.exercises.desk_exercise.domain;
 
 import poo.exercises.desk_exercise.exception.*;
 
-//import java.util.Scanner;
-
 public class Desk {
 
     private String wood;
@@ -50,9 +48,8 @@ public class Desk {
             if (drawers > 12) {
                 throw new InvalidSeveralDrawersException("Error: Max Drawers Hit.");
             }
-//            Scanner input = new Scanner(System.in);
+
             System.out.println("Place the number of drawers on the table:");
-//            drawers = input.nextInt();
 
             this.drawers = drawers;
         }
