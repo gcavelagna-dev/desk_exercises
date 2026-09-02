@@ -18,7 +18,7 @@ public class TestDesks {
         int amount = 0;
 
         while (true) {
-            System.out.println("How many tables will you have");
+            System.out.println("How many tables will you have?[Max: 5]");
 
             try {
                 amount = input.nextInt();
@@ -105,6 +105,6 @@ public class TestDesks {
         deskRegister.showTables();
 
         System.out.println("----------------------------");
-        
+
     }
 }

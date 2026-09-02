@@ -24,14 +24,14 @@ public class Desk {
     @Override
     public String toString() {
         return "Desk (" +
-                "drawers: " + drawers + " " +
                 "| Wood: " + wood + " " +
-                "| Color: " + color + 
+                "| Color: " + color + " " +
+                "drawers: " + drawers +
                 ')';
     }
 
     public void setWood(String wood) {
-        if  (wood.isEmpty() || wood.isBlank()) {
+        if (wood.isEmpty() || wood.isBlank()) {
             throw new InvalidWoodException("Error: Invalid Wood.");
         }
         this.wood = wood;
