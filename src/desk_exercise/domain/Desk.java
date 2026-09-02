@@ -24,9 +24,9 @@ public class Desk {
     @Override
     public String toString() {
         return "Desk (" +
-                "| Wood: " + wood + " " +
+                "Wood: " + wood + " " +
                 "| Color: " + color + " " +
-                "drawers: " + drawers +
+                "| Drawers: " + drawers +
                 ')';
     }
 
