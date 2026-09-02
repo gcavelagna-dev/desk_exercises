@@ -100,17 +100,11 @@ public class TestDesks {
             deskRegister.addDesk(desk);
         }
 
+        System.out.println("\n----------------------------\n");
+
         deskRegister.showTables();
 
-        System.out.println("\n----------------------------\n");
-
-
-        //                  testar o showTables                \\
-
-
-//        deskRegister.showTables(deskRegister.showTables());
-        System.out.println("\n----------------------------\n");
-
-
+        System.out.println("----------------------------");
+        
     }
 }
