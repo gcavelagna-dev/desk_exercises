@@ -17,8 +17,8 @@ public class Desk {
     }
 
 /*
-    toString serve para mostrar para java onde quer que o objeto em memória seja aplicado
-    refiro na parte do arrayList, que quando utilizo showTables, ele aparece Desk@94353
+   toString serve para mostrar para java onde quer que o objeto em memória seja aplicado
+   O arrayList acabou dando um caminho da memória no showTables
  */
 
     @Override
