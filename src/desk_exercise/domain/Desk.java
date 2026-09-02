@@ -44,7 +44,7 @@ public class Desk {
 
         if (hasDrawers) {
             if (drawers < 0) {
-                throw new InvalidNegativeDrawersException("Error: Negative Drawers.");
+                throw new InvalidNegativeNumberException("Error: Negative Drawers.");
             }
             if (drawers > 12) {
                 throw new InvalidSeveralDrawersException("Error: Max Drawers Hit.");

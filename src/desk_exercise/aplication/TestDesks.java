@@ -2,6 +2,8 @@ package poo.exercises.desk_exercise.aplication;
 
 import poo.exercises.desk_exercise.domain.Desk;
 import poo.exercises.desk_exercise.domain.DeskRegister;
+import poo.exercises.desk_exercise.exception.InvalidNegativeNumberException;
+import poo.exercises.desk_exercise.exception.InvalidSeveralDrawersException;
 import poo.exercises.desk_exercise.exception.InvalidUnidentifiedNumberException;
 
 import java.util.Scanner;
@@ -29,6 +31,8 @@ public class TestDesks {
                 System.err.println("\nUnidentified Number.\n");
                 input.next();
                 continue;
+            } catch (InvalidNegativeNumberException e){
+                System.err.println("Error: Negative Number.");
             }
         }
 
@@ -76,13 +80,18 @@ public class TestDesks {
 
                 System.out.println("\nHow many drawers does this desk have?\n");
                 try {
-
                     drawers = input.nextInt();
                     desk.setDrawers(drawers);
                     break;
                 } catch (InvalidUnidentifiedNumberException e) {
                     System.err.println("Unidentified Number.");
-                    desk.setDrawers(drawers);
+                    input.next();
+                    continue;
+                }catch (InvalidNegativeNumberException e){
+                    System.err.println("\"Error: Negative Drawers.\n");
+                    input.next();
+                    continue;
+                }catch (InvalidSeveralDrawersException e){
                     input.next();
                     continue;
                 }
