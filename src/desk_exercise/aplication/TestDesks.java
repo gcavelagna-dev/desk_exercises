@@ -31,7 +31,7 @@ public class TestDesks {
                 System.err.println("\nUnidentified Number.\n");
                 input.next();
                 continue;
-            } catch (InvalidNegativeNumberException e){
+            } catch (InvalidNegativeNumberException e) {
                 System.err.println("Error: Negative Number.");
             }
         }
@@ -87,11 +87,11 @@ public class TestDesks {
                     System.err.println("Unidentified Number.");
                     input.next();
                     continue;
-                }catch (InvalidNegativeNumberException e){
+                } catch (InvalidNegativeNumberException e) {
                     System.err.println("\"Error: Negative Drawers.\n");
                     input.next();
                     continue;
-                }catch (InvalidSeveralDrawersException e){
+                } catch (InvalidSeveralDrawersException e) {
                     input.next();
                     continue;
                 }

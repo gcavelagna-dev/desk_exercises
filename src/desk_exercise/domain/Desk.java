@@ -11,26 +11,29 @@ public class Desk {
     private String wood;
     private String color;
     private boolean hasDrawers;
-    private int drawers = 1;
+    private int drawers = 0;
 
     public Desk() {
     }
 
-    //toString serve para mostrar para java onde quer que o objeto em memória seja aplicado
-    //refiro na parte do arrayList, que quando utilizo showTables, ele aparece Desk@94353
+/*
+    toString serve para mostrar para java onde quer que o objeto em memória seja aplicado
+    refiro na parte do arrayList, que quando utilizo showTables, ele aparece Desk@94353
+ */
 
     @Override
-    public String toString(){
-        return "Desk{"+
-                "drawers="+ drawers +
+    public String toString() {
+        return "Desk{" +
+                "drawers=" + drawers +
                 '}';
     }
 
     public void setWood(String wood) {
-        if (wood.isEmpty() || wood.isBlank()) {
+        if  (wood.isEmpty() || wood.isBlank()) {
             throw new InvalidWoodException("Error: Invalid Wood.");
         }
         this.wood = wood;
+
     }
 
     public void setColor(String color) {
