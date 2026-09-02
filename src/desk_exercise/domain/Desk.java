@@ -2,6 +2,7 @@ package poo.exercises.desk_exercise.domain;
 
 import poo.exercises.desk_exercise.exception.*;
 
+//testando alteração
 public class Desk {
 
     private String wood;
