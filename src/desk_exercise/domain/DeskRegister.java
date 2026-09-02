@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class DeskRegister {
 
-    private ArrayList<Desk> desks;
+    private final ArrayList<Desk> desks;
 
     public DeskRegister() {
         this.desks = new ArrayList<>();
@@ -25,7 +25,7 @@ public class DeskRegister {
         desks.add(desk);
     }
 
-    public void showTables(ArrayList<Desk> desks) {
+    public void showTables() {
         for (int i = 0; i < desks.size(); i++) {
             System.out.println((i + 1) + " - " + desks.get(i));
         }

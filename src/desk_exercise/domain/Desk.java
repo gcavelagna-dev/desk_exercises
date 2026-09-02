@@ -9,17 +9,17 @@ public class Desk {
     private String color;
     private boolean hasDrawers;
     private int drawers = 1;
-
-    public Desk(String wood, String color, boolean hasDrawers) {
-        setColor(color);
-        setWood(wood);
-        setHasDrawers(hasDrawers);
-        if (hasDrawers) {
-            setDrawers(drawers);
-        } else {
-            drawers = 0;
-            setDrawers(drawers);
-        }
+//    String wood, String color, boolean hasDrawers)
+    public Desk( ){
+//        setColor(color);
+//        setWood(wood);
+//        setHasDrawers(hasDrawers);
+//        if (hasDrawers) {
+//            setDrawers(drawers);
+//        } else {
+//            drawers = 0;
+//            setDrawers(drawers);
+//        }
     }
 
     public void setWood(String wood) {
@@ -50,9 +50,8 @@ public class Desk {
                 throw new InvalidSeveralDrawersException("Error: Max Drawers Hit.");
             }
 
-            System.out.println("Place the number of drawers on the table:");
-
             this.drawers = drawers;
+
         }
     }
 
