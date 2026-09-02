@@ -25,7 +25,7 @@ public class TestDesks {
                     continue;
                 }
                 break;
-            } catch (RuntimeException e) {
+            } catch (InvalidUnidentifiedNumberException e) {
                 System.err.println("\nUnidentified Number.\n");
                 input.next();
                 continue;
