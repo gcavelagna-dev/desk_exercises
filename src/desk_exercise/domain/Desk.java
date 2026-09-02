@@ -2,24 +2,28 @@ package poo.exercises.desk_exercise.domain;
 
 import poo.exercises.desk_exercise.exception.*;
 
-//testando alteração
 public class Desk {
+
+    /***
+     * @IloveJava
+     */
 
     private String wood;
     private String color;
     private boolean hasDrawers;
     private int drawers = 1;
-//    String wood, String color, boolean hasDrawers)
-    public Desk( ){
-//        setColor(color);
-//        setWood(wood);
-//        setHasDrawers(hasDrawers);
-//        if (hasDrawers) {
-//            setDrawers(drawers);
-//        } else {
-//            drawers = 0;
-//            setDrawers(drawers);
-//        }
+
+    public Desk() {
+    }
+
+    //toString serve para mostrar para java onde quer que o objeto em memória seja aplicado
+    //refiro na parte do arrayList, que quando utilizo showTables, ele aparece Desk@94353
+
+    @Override
+    public String toString(){
+        return "Desk{"+
+                "drawers="+ drawers +
+                '}';
     }
 
     public void setWood(String wood) {
