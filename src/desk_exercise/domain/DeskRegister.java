@@ -30,9 +30,11 @@ public class DeskRegister {
             System.err.println(error);
             return;
         }
+        System.out.println("        ============================");
         for (int i = 0; i < desks.size(); i++) {
-            System.out.println((i + 1) + " - " + desks.get(i));
+            System.out.println("\n"+(i + 1) + " - " + desks.get(i)+"\n");
         }
+        System.out.println("        ============================");
     }
 
     public void removeDesk(int index) {

@@ -32,8 +32,7 @@ public class Main {
             String wood;
             String color;
             String response;
-            boolean hasDrawer;
-            int drawers = 0;
+            int drawers;
 
             int option = input.nextInt();
             switch (option) {
@@ -43,37 +42,48 @@ public class Main {
                     boolean register = true;
 
                     while (register) {
-                        System.out.println("\nWhat kind of wood is the table made of?");
-                        input.nextLine();
-                        wood = input.nextLine();
-                        desk.setWood(wood);
 
-                        System.out.println("\nWhat is the color?");
-                        color = input.nextLine();
-                        desk.setColor(color);
+                        while (true){
+                            try {
+                                System.out.println("\nWhat kind of wood is the table made of?");
+                                wood = input.nextLine();
+                                desk.setWood(wood);
+                                break;
+                            }catch (DeskException e){
+                                System.out.println(e.getMessage());
+                            }
+                        }
+
+                        while (true){
+                            try{
+                                System.out.println("\nWhat is the color?");
+                                color = input.nextLine();
+                                desk.setColor(color);
+                                break;
+                            }catch (DeskException e){
+                                System.out.println(e.getMessage());
+                            }
+                        }
 
                         while (true) {
                             System.out.println("\nDoes the desk have drawers?[Y/N]");
                             response = input.next();
 
                             if (response.equalsIgnoreCase("Y")) {
-                                hasDrawer = true;
                                 desk.setHasDrawers(true);
                                 break;
                             } else if (response.equalsIgnoreCase("N")) {
-                                hasDrawer = false;
                                 desk.setHasDrawers(false);
                                 register = false;
                                 break;
                             } else {
                                 System.err.println("\nUnidentified responses.");
                                 input.next();
-                                continue;
                             }
 
                         }
 
-                        while (hasDrawer) {
+                        while (desk.isHasDrawers()) {
 
                             System.out.println("\nHow many drawers does this desk have?\n");
                             try {
@@ -84,12 +94,9 @@ public class Main {
                             } catch (DeskException e) {
                                 System.err.println(e.getMessage());
                                 input.next();
-                                continue;
                             }
                         }
-
                         deskRegister.addDesk(desk);
-                        break;
                     }
                     break;
                 case 2:
@@ -104,16 +111,14 @@ public class Main {
 
                         System.out.println("Which table do you want to remove?[by the index]");
                         try {
-                            int index = input.nextInt();
+                            int index = (input.nextInt() - 1);
                             deskRegister.removeDesk(index);
+                            System.out.println("Table successfully removed!\n");
+                            running = false;
                         }catch (DeskException e){
                             System.out.println(e.getMessage());
-                            continue;
                         }
-
-                        running = false;
                     }
-
                     break;
                 case 4:
                     System.err.println("\nLogging out of the system...\n");
