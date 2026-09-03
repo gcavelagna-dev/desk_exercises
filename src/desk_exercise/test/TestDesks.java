@@ -1,10 +1,8 @@
-package poo.exercises.desk_exercise.aplication;
+package poo.exercises.desk_exercise.test;
 
 import poo.exercises.desk_exercise.domain.Desk;
 import poo.exercises.desk_exercise.domain.DeskRegister;
-import poo.exercises.desk_exercise.exception.InvalidNegativeNumberException;
-import poo.exercises.desk_exercise.exception.InvalidSeveralDrawersException;
-import poo.exercises.desk_exercise.exception.InvalidUnidentifiedNumberException;
+import poo.exercises.desk_exercise.exception.DeskException;
 
 import java.util.Scanner;
 
@@ -27,12 +25,10 @@ public class TestDesks {
                     continue;
                 }
                 break;
-            } catch (InvalidUnidentifiedNumberException e) {
-                System.err.println("\nUnidentified Number.\n");
+            } catch (DeskException e) {
+                System.err.println(e.getMessage());
                 input.next();
                 continue;
-            } catch (InvalidNegativeNumberException e) {
-                System.err.println("Error: Negative Number.");
             }
         }
 
@@ -66,6 +62,7 @@ public class TestDesks {
                     desk.setHasDrawers(hasDrawer);
                     break;
                 } else if (response.equalsIgnoreCase("N")) {
+                    desk.setHasDrawers(false);
                     hasDrawer = false;
                     break;
                 } else {
@@ -83,15 +80,8 @@ public class TestDesks {
                     drawers = input.nextInt();
                     desk.setDrawers(drawers);
                     break;
-                } catch (InvalidUnidentifiedNumberException e) {
+                } catch (DeskException e) {
                     System.err.println("Unidentified Number.");
-                    input.next();
-                    continue;
-                } catch (InvalidNegativeNumberException e) {
-                    System.err.println("\"Error: Negative Drawers.\n");
-                    input.next();
-                    continue;
-                } catch (InvalidSeveralDrawersException e) {
                     input.next();
                     continue;
                 }

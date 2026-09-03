@@ -1,7 +1,6 @@
 package poo.exercises.desk_exercise.domain;
 
 import poo.exercises.desk_exercise.exception.InvalidAddDeskNullException;
-import poo.exercises.desk_exercise.exception.InvallidDuplicateDeskException;
 
 import java.util.ArrayList;
 
@@ -17,9 +16,6 @@ public class DeskRegister {
 
         if (desk == null) {
             throw new InvalidAddDeskNullException("Error: Addition of a Null Desk.");
-        }
-        if (desks.contains(desk)) {
-            throw new InvallidDuplicateDeskException("Error: Duplicate Desks.");
         }
 
         desks.add(desk);

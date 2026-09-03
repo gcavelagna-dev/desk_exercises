@@ -31,7 +31,7 @@ public class Desk {
     }
 
     public void setWood(String wood) {
-        if (wood.isEmpty() || wood.isBlank()) {
+        if (wood.isBlank()) {
             throw new InvalidWoodException("Error: Invalid Wood.");
         }
         this.wood = wood;
@@ -39,7 +39,7 @@ public class Desk {
     }
 
     public void setColor(String color) {
-        if (color.isBlank() || color.isEmpty()) {
+        if (color.isBlank()) {
             throw new InvalidColorException("Error: Invalid Color");
         }
         this.color = color;
