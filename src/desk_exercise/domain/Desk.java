@@ -9,15 +9,16 @@ public class Desk {
     private boolean hasDrawers;
     private int drawers = 0;
 
-    public Desk() {}
+    public Desk() {
+    }
 
     @Override
     public String toString() {
-        return "Desk (" +
+        return "\n" + "Desk (" +
                 "Wood: " + wood + " " +
                 "| Color: " + color + " " +
                 "| Drawers: " + drawers +
-                ')';
+                ')' + "\n";
     }
 
     public void setWood(String wood) {

@@ -108,7 +108,7 @@ public class Main {
                             deskRegister.removeDesk(index);
                         }catch (DeskException e){
                             System.out.println(e.getMessage());
-
+                            continue;
                         }
 
                         running = false;
