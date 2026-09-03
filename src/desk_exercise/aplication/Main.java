@@ -43,24 +43,25 @@ public class Main {
 
                     while (register) {
 
-                        while (true){
+                        while (true) {
+                            System.out.println("\nWhat kind of wood is the table made of?");
                             try {
-                                System.out.println("\nWhat kind of wood is the table made of?");
+                                input.nextLine();
                                 wood = input.nextLine();
                                 desk.setWood(wood);
                                 break;
-                            }catch (DeskException e){
+                            } catch (DeskException e) {
                                 System.out.println(e.getMessage());
                             }
                         }
 
-                        while (true){
-                            try{
+                        while (true) {
+                            try {
                                 System.out.println("\nWhat is the color?");
                                 color = input.nextLine();
                                 desk.setColor(color);
                                 break;
-                            }catch (DeskException e){
+                            } catch (DeskException e) {
                                 System.out.println(e.getMessage());
                             }
                         }
@@ -115,7 +116,7 @@ public class Main {
                             deskRegister.removeDesk(index);
                             System.out.println("Table successfully removed!\n");
                             running = false;
-                        }catch (DeskException e){
+                        } catch (DeskException e) {
                             System.out.println(e.getMessage());
                         }
                     }
@@ -128,9 +129,5 @@ public class Main {
                     throw new IllegalStateException("Unexpected value: " + option);
             }
         }
-
     }
-
 }
-
-

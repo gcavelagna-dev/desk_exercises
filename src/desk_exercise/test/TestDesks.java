@@ -8,6 +8,12 @@ import java.util.Scanner;
 
 public class TestDesks {
 
+    /***
+     * @IloveJava
+     * tests to see results
+     * @IloveJava
+     */
+
     public static void main(String[] args) {
 
         DeskRegister deskRegister = new DeskRegister();
