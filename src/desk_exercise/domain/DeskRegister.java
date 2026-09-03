@@ -45,7 +45,7 @@ public class DeskRegister {
 
         if (index >= 0 && index < desks.size()) {
             desks.remove(index);
-        }else if (index > desks.size() || index < desks.size()){
+        } else if (index > desks.size() || index < desks.size()) {
             throw new InvalidIndexNumberException("Error: Invalid Number.");
         } else {
             throw new InvalidRemoveDeskException("Error: Invalid Remove Desk.");

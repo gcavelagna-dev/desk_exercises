@@ -4,22 +4,12 @@ import poo.exercises.desk_exercise.exception.*;
 
 public class Desk {
 
-    /***
-     * @IloveJava
-     */
-
     private String wood;
     private String color;
     private boolean hasDrawers;
     private int drawers = 0;
 
-    public Desk() {
-    }
-
-/*
-   toString serve para mostrar para java onde quer que o objeto em memória seja aplicado
-   O arrayList acabou dando um caminho da memória no showTables
- */
+    public Desk() {}
 
     @Override
     public String toString() {
@@ -56,7 +46,7 @@ public class Desk {
                 throw new InvalidNegativeNumberException("Error: Negative Drawers.");
             }
             if (drawers > 12) {
-                throw new InvalidSeveralDrawersException("Error: Max Drawers Hit.");
+                throw new InvalidSeveralDrawersException("Error: Max Drawers Hit.\n");
             }
 
             this.drawers = drawers;

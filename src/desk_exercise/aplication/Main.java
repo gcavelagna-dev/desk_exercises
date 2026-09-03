@@ -97,41 +97,21 @@ public class Main {
                     break;
                 case 3:
 
-                    boolean removing = true;
+                    deskRegister.showTables();
 
-                    while (removing) {
+                    boolean running = true;
+                    while (running) {
 
-                        System.out.println("\nGet the index");
-                        System.out.println("Do you know the table index? [Y/N]");
-                        String answer = input.next();
+                        System.out.println("Which table do you want to remove?[by the index]");
+                        try {
+                            int index = input.nextInt();
+                            deskRegister.removeDesk(index);
+                        }catch (DeskException e){
+                            System.out.println(e.getMessage());
 
-                        boolean answerBoolean = false;
-                        if (answer.equalsIgnoreCase("Y")) {
-                            answerBoolean = true;
-                        } else if (answer.equalsIgnoreCase("N")) {
-                            System.err.println("See the index in the second option.");
-                            answerBoolean = false;
-                        } else {
-                            System.err.println("Unrecognized response, please try again.");
-                            input.next();
-                            continue;
                         }
 
-                        while (answerBoolean) {
-                            System.out.println("What is the table index?");
-                            try {
-
-                                int index = (input.nextInt() - 1);
-                                deskRegister.removeDesk(index);
-                                System.out.println("Table successfully removed!\n");
-                                answerBoolean = false;
-                            } catch (DeskException e) {
-                                System.out.println(e.getMessage());
-                                input.next();
-                                continue;
-                            }
-                        }
-                        removing = false;
+                        running = false;
                     }
 
                     break;
